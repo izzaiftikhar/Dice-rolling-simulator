@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dice Rolling Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="app">
+    <h1>Dice Rolling Simulator</h1>
+
+    <section class="table" aria-label="Dice">
+      <div class="die" id="die1" role="img" aria-label="Die 1"></div>
+      <div class="die" id="die2" role="img" aria-label="Die 2"></div>
+    </section>
+
+    <p class="total" id="total" aria-live="polite">Roll the dice to start</p>
+
+    <div class="actions">
+      <button id="rollBtn" class="btn primary">Roll dice</button>
+      <button id="resetBtn" class="btn">Reset</button>
+    </div>
+
+    <section class="stats" aria-label="Statistics">
+      <div><span id="statCount">0</span><small>Rolls</small></div>
+      <div><span id="statHighest">0</span><small>Highest</small></div>
+      <div><span id="statLowest">0</span><small>Lowest</small></div>
+      <div><span id="statAverage">0</span><small>Average</small></div>
+    </section>
+
+    <section class="history">
+      <h2>Recent rolls</h2>
+      <ul id="history"><li class="empty">No rolls yet</li></ul>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
